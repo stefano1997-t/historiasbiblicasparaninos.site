@@ -1,0 +1,748 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>✨ Historinhas Bíblicas - A maior plataforma cristã para crianças</title>
+    <!-- Fontes e CSS base -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Kumbh+Sans:wght@400;700;800&family=Poppins:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            background: linear-gradient(135deg, #020617 0%, #0f172a 100%);
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.5;
+            color: #fff;
+        }
+        .page {
+            max-width: 1200px;
+            margin: 0 auto;
+            overflow-x: hidden;
+        }
+        /* Containers */
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 30px 20px;
+            width: 100%;
+            position: relative;
+        }
+        .bg-red {
+            background: linear-gradient(45deg, #CA0000, #FF4D4D);
+            text-align: center;
+            border-radius: 0 0 30px 30px;
+            box-shadow: 0 10px 30px rgba(202,0,0,0.3);
+        }
+        .bg-cover {
+            background-position: top center;
+            background-repeat: no-repeat;
+            background-size: cover;
+            border-radius: 0 0 40px 40px;
+            position: relative;
+        }
+        .bg-cover::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: linear-gradient(to bottom, rgba(1,0,37,0.3), rgba(1,0,37,0.8));
+            border-radius: 0 0 40px 40px;
+            pointer-events: none;
+        }
+        .bg-cover > * {
+            position: relative;
+            z-index: 2;
+        }
+        .hero-bg {
+            background-image: url('https://polarisdigital.online/wp-content/uploads/2025/10/Jesus-PC-2.png');
+        }
+        @media (max-width: 768px) {
+            .hero-bg {
+                background-image: url('https://polarisdigital.online/wp-content/uploads/2025/10/Jesus-Celular-3.png');
+            }
+        }
+        /* Espaçadores */
+        .spacer {
+            height: 375px;
+        }
+        @media (max-width: 768px) {
+            .spacer {
+                height: 250px;
+            }
+        }
+        /* Títulos e textos */
+        h1, h2, h3, h4 {
+            font-weight: 800;
+            line-height: 1.2;
+            letter-spacing: -0.02em;
+        }
+        .heading-xl {
+            font-size: 48px;
+            text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+        }
+        .heading-lg {
+            font-size: 36px;
+        }
+        .heading-md {
+            font-size: 28px;
+        }
+        .heading-sm {
+            font-size: 22px;
+        }
+        .text-body {
+            font-size: 20px;
+            font-weight: 400;
+        }
+        .text-green {
+            color: #5CFF57;
+            text-shadow: 0 0 10px rgba(92,255,87,0.3);
+        }
+        .text-white {
+            color: #fff;
+        }
+        .text-black {
+            color: #1e1e2f;
+        }
+        .text-red {
+            color: #ff6b6b;
+        }
+        .text-strike {
+            text-decoration: line-through;
+            opacity: 0.7;
+        }
+        .text-center {
+            text-align: center;
+        }
+        @media (max-width: 768px) {
+            .heading-xl {
+                font-size: 36px;
+            }
+            .heading-lg {
+                font-size: 28px;
+            }
+            .heading-md {
+                font-size: 24px;
+            }
+            .text-body {
+                font-size: 18px;
+            }
+        }
+        /* Botões espetaculares */
+        .btn {
+            display: inline-block;
+            font-family: 'Kumbh Sans', sans-serif;
+            font-weight: 800;
+            text-transform: uppercase;
+            font-size: 20px;
+            padding: 18px 40px;
+            border-radius: 60px;
+            border: none;
+            background: linear-gradient(105deg, #19762C, #42B55A);
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.5), 0 0 0 2px rgba(92,255,87,0.3);
+            transition: all 0.3s ease;
+            text-align: center;
+            letter-spacing: 1px;
+        }
+        .btn:hover {
+            transform: translateY(-5px) scale(1.02);
+            box-shadow: 0 30px 40px -10px #000, 0 0 0 4px #5CFF57;
+            background: linear-gradient(105deg, #1e8a3a, #4ec96a);
+        }
+        .btn-green {
+            background: linear-gradient(174deg, #46C44F, #1AA824);
+            box-shadow: 0 15px 30px rgba(70,196,79,0.4), 0 0 0 2px rgba(255,255,255,0.2);
+            font-size: 24px;
+            padding: 20px 50px;
+        }
+        .btn-green:hover {
+            box-shadow: 0 20px 40px rgba(70,196,79,0.6), 0 0 0 4px #fff;
+        }
+        @media (max-width: 768px) {
+            .btn {
+                font-size: 16px;
+                padding: 16px 30px;
+            }
+            .btn-green {
+                font-size: 20px;
+            }
+        }
+        /* Imagens */
+        .img-responsive {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        .img-center {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .img-rounded {
+            border-radius: 20px;
+        }
+        .img-shadow {
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.6), 0 0 0 3px rgba(92,255,87,0.3);
+            transition: transform 0.3s;
+        }
+        .img-shadow:hover {
+            transform: scale(1.02);
+        }
+        .img-bonus {
+            width: 60%;
+            border-radius: 20px;
+            border: 3px solid #5CFF57;
+            box-shadow: 0 15px 30px #000;
+        }
+        /* Grid e flex */
+        .flex-row {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+            justify-content: center;
+            align-items: center;
+        }
+        .grid-2 {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+        .grid-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px;
+        }
+        @media (max-width: 768px) {
+            .grid-2, .grid-3 {
+                grid-template-columns: 1fr;
+            }
+        }
+        .w-50 {
+            width: 50%;
+        }
+        .w-70 {
+            width: 70%;
+        }
+        .w-80 {
+            width: 80%;
+        }
+        .w-100 {
+            width: 100%;
+        }
+        @media (max-width: 768px) {
+            .w-50, .w-70, .w-80 {
+                width: 100%;
+            }
+        }
+        .mx-auto {
+            margin-left: auto;
+            margin-right: auto;
+        }
+        .my-3 {
+            margin-top: 30px;
+            margin-bottom: 30px;
+        }
+        .mt-3 {
+            margin-top: 30px;
+        }
+        .mt-5 {
+            margin-top: 50px;
+        }
+        .mb-2 {
+            margin-bottom: 20px;
+        }
+        .p-3 {
+            padding: 30px;
+        }
+        /* Listas com ícone */
+        .list-icon {
+            list-style: none;
+            padding: 0;
+        }
+        .list-icon li {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            font-size: 24px;
+            font-weight: 500;
+            margin-bottom: 20px;
+            background: rgba(255,255,255,0.05);
+            padding: 15px 25px;
+            border-radius: 60px;
+            backdrop-filter: blur(5px);
+            border: 1px solid rgba(92,255,87,0.2);
+        }
+        .list-icon li i {
+            color: #5CFF57;
+            font-size: 32px;
+            width: 50px;
+            text-align: center;
+            filter: drop-shadow(0 0 5px #5CFF57);
+        }
+        @media (max-width: 768px) {
+            .list-icon li {
+                font-size: 18px;
+                padding: 12px 18px;
+            }
+            .list-icon li i {
+                font-size: 26px;
+                width: 40px;
+            }
+        }
+        /* Lista de checks na oferta */
+        .list-check {
+            list-style: none;
+            padding: 0;
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 15px;
+        }
+        .list-check li {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            font-size: 17px;
+            font-weight: 400;
+            background: #f8f9fa;
+            padding: 12px 18px;
+            border-radius: 50px;
+            color: #1e1e2f;
+            box-shadow: 0 5px 10px rgba(0,0,0,0.05);
+        }
+        .list-check li i {
+            color: #21A316;
+            font-size: 24px;
+        }
+        @media (max-width: 768px) {
+            .list-check {
+                grid-template-columns: 1fr;
+            }
+            .list-check li {
+                font-size: 14px;
+            }
+        }
+        /* divisor decorativo */
+        .divider {
+            width: 150px;
+            height: 4px;
+            background: linear-gradient(90deg, #5CFF57, #CA0000);
+            margin: 30px auto;
+            border-radius: 4px;
+        }
+        /* cards bônus */
+        .card-bonus {
+            background: rgba(27,27,47,0.8);
+            backdrop-filter: blur(10px);
+            border: 2px solid rgba(92,255,87,0.3);
+            border-radius: 30px;
+            padding: 30px 20px;
+            text-align: center;
+            box-shadow: 0 25px 40px -10px #000;
+            transition: all 0.3s;
+        }
+        .card-bonus:hover {
+            transform: translateY(-10px);
+            border-color: #5CFF57;
+            box-shadow: 0 30px 50px -10px #5CFF57;
+        }
+        .card-bonus img {
+            width: 60%;
+            border-radius: 20px;
+            margin-bottom: 20px;
+            border: 3px solid #5CFF57;
+        }
+        .card-bonus h3 {
+            font-size: 24px;
+            font-weight: 700;
+            color: #fff;
+            line-height: 1.3;
+        }
+        /* oferta card */
+        .oferta-wrapper {
+            background: linear-gradient(145deg, #0b1120, #1a1f35);
+            border-radius: 60px 60px 30px 30px;
+            padding: 40px 30px 30px;
+            margin-top: -80px;
+            position: relative;
+            z-index: 5;
+            border: 2px solid rgba(92,255,87,0.3);
+            box-shadow: 0 30px 60px #000;
+        }
+        .preco-antigo {
+            font-size: 28px;
+            opacity: 0.8;
+        }
+        .preco-novo {
+            font-family: 'Bebas Neue', cursive;
+            font-size: 100px;
+            color: #00FF00;
+            line-height: 0.9;
+            text-shadow: 0 0 20px #46C44F;
+            margin: 20px 0;
+        }
+        @media (max-width: 768px) {
+            .preco-novo {
+                font-size: 100px;
+            }
+        }
+        /* carrossel */
+        .carousel-container {
+            width: 100%;
+            overflow: hidden;
+            padding: 20px 0;
+        }
+        .carousel-track {
+            display: flex;
+            gap: 20px;
+            animation: infiniteSlide 25s linear infinite;
+            width: max-content;
+        }
+        .carousel-track img {
+            height: 220px;
+            width: auto;
+            border-radius: 20px;
+            border: 3px solid #5CFF57;
+            box-shadow: 0 20px 30px #000;
+            transition: transform 0.3s;
+        }
+        .carousel-track img:hover {
+            transform: scale(1.05);
+            border-color: #fff;
+        }
+        @keyframes infiniteSlide {
+            from { transform: translateX(0); }
+            to { transform: translateX(-50%); }
+        }
+        /* faq premium */
+        .faq-item {
+            background: rgba(255,255,255,0.05);
+            border-radius: 30px;
+            margin-bottom: 15px;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(92,255,87,0.2);
+            overflow: hidden;
+        }
+        .faq-question {
+            background: none;
+            border: none;
+            width: 100%;
+            text-align: left;
+            padding: 22px 30px;
+            font-size: 20px;
+            font-weight: 600;
+            color: #fff;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+        .faq-question i {
+            color: #5CFF57;
+            font-size: 22px;
+            transition: transform 0.3s;
+        }
+        .faq-answer {
+            display: none;
+            padding: 0 30px 25px 30px;
+            color: #ddd;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .faq-item.active .faq-answer {
+            display: block;
+        }
+        .faq-item.active .faq-question i {
+            transform: rotate(180deg);
+        }
+        /* selo garantia */
+        .garantia-box {
+            display: flex;
+            align-items: center;
+            gap: 40px;
+            background: rgba(255,255,255,0.03);
+            border-radius: 50px;
+            padding: 30px;
+            border: 1px solid rgba(92,255,87,0.2);
+        }
+        @media (max-width: 768px) {
+            .garantia-box {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+        /* footer */
+        .footer {
+            background: #0a0c1a;
+            border-top: 2px solid rgba(92,255,87,0.2);
+            text-align: center;
+            padding: 30px;
+            font-size: 14px;
+            color: #aaa;
+        }
+    </style>
+
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '1861151224573140');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1861151224573140&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
+
+</head>
+<body>
+    <div class="page">
+
+        <!-- Topo de desconto chamativo -->
+        <div class="container bg-red">
+            <h2 class="heading-sm" style="font-weight:800; letter-spacing:2px;">🔥 ¡ASEGURA EL ACCESO CON 60% DE DESCUENTO! 🔥</h2>
+        </div>
+
+        <!-- Hero com imagem e texto impactante -->
+        <div class="container hero-bg bg-cover">
+            <div class="spacer"></div>
+            <h1 class="heading-xl text-white text-center">¡TU HIJO MÁS CERCA<br>DEL REINO DE DIOS!</h1>
+            <div class="text-body text-white text-center my-3" style="max-width:800px; margin-left:auto; margin-right:auto;">
+                <strong>✨ Historias y animaciones bíblicas, actividades y juegos inspirados en la Palabra de Dios.</strong>
+            </div>
+            <div class="text-body text-white text-center mb-2" style="font-size:22px;">
+                La mayor plataforma de entretenimiento <strong class="text-green">seguro y edificante</strong> para tu niño.
+            </div>
+            <h2 class="heading-lg text-white text-center" style="font-weight:800;">
+                <span class="text-green">LA PLATAFORMA</span> QUE HA TRANSFORMADO <span class="text-green">A MILES DE FAMILIAS</span>
+            </h2>
+            <div class="divider"></div>
+        </div>
+
+        <!-- Selo social e botão principal -->
+        <div class="container flex-row" style="gap:20px;">
+            <img src="https://polarisdigital.online/wp-content/uploads/2025/10/Assinantes-2.png" alt="Assinantes" class="img-responsive w-50" style="max-width:350px; filter:drop-shadow(0 10px 20px #000);">
+            <img src="https://polarisdigital.online/wp-content/uploads/2025/10/xPbgbN3745792.webp" alt="Selo" class="img-responsive" style="width:130px; filter:drop-shadow(0 10px 20px #000);">
+            <a href="#oferta" class="btn" style="padding:20px 50px;">¡ACCEDER A LA PLATAFORMA!</a>
+        </div>
+
+        <!-- Carrossel +50 histórias -->
+        <div class="container">
+            <h2 class="heading-xl text-white text-center"><span class="text-green">+50 HISTORIAS</span> BÍBLICAS ANIMADAS</h2>
+            <h3 class="heading-md text-white text-center opacity-75 mb-2">Acerca a tu hijo(a) a Dios de forma fácil y divertida.</h3>
+            <div class="carousel-container">
+                <div class="carousel-track">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Mar-vermelho.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Davi-e-Golias.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Jesus.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Jesus-e-apostolos.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Maria-e-Jose.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Noe.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Jesus-e-peixes.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/adao-e-eva.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Mar-vermelho.png">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Davi-e-Golias.png">
+                </div>
+            </div>
+        </div>
+
+        <!-- Multiplataforma -->
+        <div class="container">
+            <h2 class="heading-xl text-white text-center">📱 ¡MIRA DONDE QUIERAS!</h2>
+            <div class="text-body text-white text-center w-80 mx-auto">
+                En <strong>Smart TVs, PlayStation, Xbox, celulares, tabletas y laptops</strong>, ¡hasta en <strong>5 pantallas simultáneas</strong>!
+            </div>
+            <img src="https://polarisdigital.online/wp-content/uploads/2025/10/Assistindo.png" alt="Dispositivos" class="img-responsive w-70 mx-auto my-3 img-shadow">
+            <div class="divider"></div>
+        </div>
+
+        <!-- Ao assinar hoje -->
+        <div class="container">
+            <h2 class="heading-xl text-white text-center">🎁 AL ASEGURAR TU PLAN HOY, RECIBES:</h2>
+            <ul class="list-icon w-80 mx-auto">
+                <li><i class="fas fa-check-circle"></i> Plataforma completa con <strong>+50 historias bíblicas animadas</strong></li>
+                <li><i class="fas fa-check-circle"></i> <strong>+100 historias bíblicas</strong> para lectura (PDF)</li>
+                <li><i class="fas fa-check-circle"></i> App con <strong>juegos bíblicos didácticos</strong></li>
+            </ul>
+        </div>
+
+        <!-- Bônus exclusivos em grid 3 -->
+        <div class="container">
+            <h2 class="heading-xl text-white text-center"> BONOS EXCLUSIVOS: </h2>
+            <div class="text-body text-white text-center w-70 mx-auto" style="background:rgba(92,255,87,0.1); padding:15px 30px; border-radius:60px; border:1px solid #5CFF57;">
+                <strong>AL COMPRAR HOY, RECIBIRÁS TODOS ESTOS <u class="text-green">BONOS GRATIS</u> 🎁</strong>
+            </div>
+
+            <div class="grid-3 mt-3">
+                <div class="card-bonus">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Cloreando-Con-Jesus.jpg">
+                    <h3>BONO 1<br>COLOREANDO CON JESÚS</h3>
+                </div>
+                <div class="card-bonus">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Actividades-Biblicas.jpg">
+                    <h3>BONO 2<br>ACTIVIDADES BÍBLICAS</h3>
+                </div>
+                <div class="card-bonus">
+                    <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Quiz-Biblico.jpg">
+                    <h3>BONO 3<br>QUIZ BÍBLICO</h3>
+                </div>
+            </div>
+
+            <div class="text-body text-white text-center mt-3 w-80 mx-auto">
+                <p>En un mundo cada vez más digital, <strong>equilibra el aprendizaje offline con experiencias espirituales</strong>. No solo inviertes en educación espiritual, sino en una <strong class="text-green">experiencia única</strong> para tu hijo.</p>
+            </div>
+            <a href="#oferta" class="btn my-3 mx-auto" style="width:fit-content;"> ¡QUIERO PLATAFORMA + BONOS! </a>
+        </div>
+
+        <!-- Frase de impacto -->
+        <div class="container">
+            <h2 class="heading-lg text-white text-center w-80 mx-auto"><span class="text-green">HISTORIAS BÍBLICAS</span> NO ES “SOLO DIBUJOS”</h2>
+            <div class="text-body text-white text-center w-70 mx-auto">
+                Sino una plataforma <strong>edificante</strong> que cuida la educación espiritual de tu niño.
+            </div>
+            <div class="divider"></div>
+        </div>
+
+        <!-- OFERTA PRINCIPAL (card irresistível) -->
+        <div class="container" id="oferta">
+            <div style="display:flex; justify-content:center; margin-bottom:50px; position:relative; z-index:10;">
+                <img src="http://polarisdigital.online/wp-content/uploads/2026/01/Mockup-Mentoria-Photoroom-1.png" alt="App" style="width:80%; filter:drop-shadow(0 -20px 40px #000);">
+            </div>
+            <div class="oferta-wrapper">
+                <div class="grid-2" style="align-items:start;">
+                    <div>
+                        <h3 class="heading-md text-white mb-2">✨ TODO LO QUE INCLUYE:</h3>
+                        <ul class="list-check">
+                            <li><i class="fas fa-check-square"></i> Bono 1 - COLOREANDO CON JESÚS</li>
+                            <li><i class="fas fa-check-square"></i> Bono 2 - ACTIVIDADES BÍBLICAS</li>
+                            <li><i class="fas fa-check-square"></i> Bono 3 - QUIZ BÍBLICO</li>
+                            <li><i class="fas fa-check-square"></i> +100 actividades edificantes PDF</li>
+                            <li><i class="fas fa-check-square"></i> +100 historias para lectura PDF</li>
+                            <li><i class="fas fa-check-square"></i> +50 historias animadas</li>
+                            <li><i class="fas fa-check-square"></i> Aplicación simple e intuitiva</li>
+                            <li><i class="fas fa-check-square"></i> Soporte humanizado 24/7</li>
+                        </ul>
+                    </div>
+                    <div class="text-center">
+                        <h3 class="heading-md text-white">De <span class="text-red preco-antigo"><s>$ 67,00</s></span> por SOLO...</h3>
+                        <div class="preco-novo">$ 6,90</div>
+                        <p class="text-white heading-sm" style="font-weight:300;">Pago único. Sin mensualidades.</p>
+                        <a href="#" class="btn btn-green mt-3" style="width:100%;"> ¡QUIERO HISTORIAS BÍBLICAS!</a>
+                        <p style="font-size:14px; color:#aaa; margin-top:15px;">⏳ Oferta por tiempo limitado</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Garantia 7 dias -->
+        <div class="container">
+            <div class="garantia-box">
+                <img src="https://polarisdigital.online/wp-content/uploads/2025/08/selo-garantia-7-dias-guia-do-conteudo-magnetico.webp" alt="Garantia" style="width:150px;">
+                <div>
+                    <h2 class="heading-md text-green">7 DIAS DE GARANTIA</h2>
+                    <p class="text-white">Para hacer tu decisión aún más fácil, te damos total libertad para unirte a nosotros y, si no te gusta, te devolvemos tu inversión. Tienes 7 días de GARANTÍA INCONDICIONAL. Solo tienes que enviarnos un mensaje y realizaremos el reembolso, sin preguntas.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Comparação Tradicional vs Cristão -->
+        <div class="container">
+            <h2 class="heading-lg text-white text-center">📺 DIFERENCIA ENTRE DIBUJOS TRADICIONAIS VS. CRISTIANOS</h2>
+            <div class="grid-2 mt-3">
+                <div class="text-center">
+                    <h3 class="heading-md" style="color:#FF7D7D;">TRADICIONAL</h3>
+                    <h4 style="color:#FF7D7D;">NO RECOMENDADO</h4>
+                    <img src="https://polarisdigital.online/wp-content/uploads/2025/10/Noticia-2.png" class="img-responsive img-rounded mt-2">
+                </div>
+                <div class="text-center">
+                    <h3 class="heading-md text-green">CRISTIANO</h3>
+                    <h4 style="color:#7DFF94;">RECOMENDADO</h4>
+                    <img src="https://polarisdigital.online/wp-content/uploads/2025/10/Noticia-1.png" class="img-responsive img-rounded mt-2" style="border:3px solid #5CFF57;">
+                </div>
+            </div>
+        </div>
+
+        <!-- FAQ -->
+        <div class="container">
+            <h2 class="heading-xl text-white text-center"><span class="text-green">❓ Preguntas</span> Frecuentes</h2>
+            <div class="faq">
+                <div class="faq-item">
+                    <button class="faq-question">¿Qué es Historias Bíblicas? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Historias Bíblicas es un servicio de <strong>streaming cristiano</strong> que ofrece una amplia variedad de historias bíblicas animadas y actividades edificantes.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Puedo descargar videos? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Sí, descarga tus episodios favoritos con Wi-Fi y míralos sin internet donde quieras.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Para qué edades está dirigido Historias Bíblicas? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Nuestros programas están dirigidos a niños de <strong>1 a 15 años.</strong></div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Cómo se me dará acceso a la plataforma? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Después de la confirmación del pago, el acceso a la plataforma se libera <strong>de forma inmediata</strong>. Recibirás un correo electrónico con el enlace para descargar la aplicación, además de tu <strong>usuario y contraseña exclusivos</strong>.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Puedo cancelar? <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">¡Claro! Sin multas ni compromisos. Cancelas con 2 clics.</div>
+                </div>
+                <div class="faq-item">
+                    <button class="faq-question">¿Dónde puedo ver el contenido?  <i class="fas fa-chevron-down"></i></button>
+                    <div class="faq-answer">Mira donde quieras y cuando quieras. Inicia sesión con tu cuenta para comenzar a ver en la computadora o en cualquier dispositivo como <strong>Smart TVs, smartphones, tabletas, laptops y videojuegos</strong>. También puedes descargar tus episodios favoritos en <strong>iOS, Android o Windows</strong> y llevar Historias Bíblicas a donde quieras, <strong>sin necesidad de conexión a internet.</strong></div>
+                </div>
+            </div>
+            <a href="#oferta" class="btn my-3 mx-auto" style="width:fit-content;"> ¡QUIERO ACCEDER AHORA! </a>
+            <p class="text-body text-white text-center">Regístrate ahora y prueba Historias Bíblicas.</p>
+        </div>
+
+        <!-- Footer -->
+        <div class="footer">
+            <p>© 2026 Historias Bíblicas. Todos los derechos reservados.</p>
+        </div>
+    </div>
+
+    <!-- Scripts FAQ e Notiflix -->
+    <script src="https://cdn.jsdelivr.net/npm/notiflix@3.2.6/dist/notiflix-aio-3.2.6.min.js"></script>
+    <script>
+        document.querySelectorAll('.faq-question').forEach(btn => {
+            btn.addEventListener('click', () => {
+                const item = btn.parentElement;
+                item.classList.toggle('active');
+            });
+        });
+
+        window.onload = function() {
+            let mensagens = [
+                ' Paulo acaba de comprar',
+                ' Marcela acaba de comprar',
+                ' Silvio acaba de comprar',
+                ' Ronaldo acaba de comprar',
+                ' Giulia acaba de comprar',
+                ' Pedro acaba de comprar',
+                ' José acaba de comprar'
+            ];
+            let i = 0;
+            setInterval(function() {
+                Notiflix.Notify.success(mensagens[i]);
+                i = (i + 1) % mensagens.length;
+            }, 1000 * 10);
+        };
+        Notiflix.Notify.init({ position: 'left-bottom', distance: '20px' });
+    </script>
+</body>
+</html>
